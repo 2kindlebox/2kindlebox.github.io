@@ -1,1 +1,0 @@
-import{f as n}from"./hoisted.kN2VPF1D.js";import"./auth.C0fEQmSJ.js";const m=t=>{document.querySelectorAll(`[${t}]`).forEach(e=>{const o=e.getAttribute(t);if(o===null)return;const c=Number(o);e.textContent=`${n(c)}`})};m("data-acc-time");
