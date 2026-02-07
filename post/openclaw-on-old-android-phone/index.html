@@ -1,0 +1,53 @@
+<!DOCTYPE html> <html lang="zh-CN" class="dark"> <head><meta charset="UTF-8"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="2kindlebox"><meta name="msapplication-TileColor" content="#1e2030"><meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><meta name="description" content="准备好以下条件："><link rel="icon" href="/favicon.ico"><title>openclaw on old android phone | 2kindlebox</title><link rel="stylesheet" href="/_astro/_page_.CIG6e0HH.css">
+<style>.outlines a[data-anchor-tag=H1]{margin-left:0}.outlines a[data-anchor-tag=H2]{margin-left:12px}.outlines a[data-anchor-tag=H3]{margin-left:24px}.outlines a[data-anchor-tag=H4]{margin-left:36px}.outlines a[data-anchor-tag=H5]{margin-left:48px}.outlines a[data-anchor-tag=H6]{margin-left:60px}
+._tabset_selm3_1 ._tab-panel_selm3_1{display:none}._tabset_selm3_1 ._tab-panels_selm3_4{display:flex}._tabset_selm3_1 input[data-tab-name=direct]{display:none}._tabset_selm3_1 input[data-tab-name=direct]:checked~._tab-panels_selm3_4 ._tab-panel_selm3_1[data-tab-name=direct]{display:block}._tabset_selm3_1 input[data-tab-name=direct]:checked~._tab-labels_selm3_13 label[data-tab-name=direct]{border-bottom:2px solid red}._tabset_selm3_1 input[data-tab-name=app]{display:none}._tabset_selm3_1 input[data-tab-name=app]:checked~._tab-panels_selm3_4 ._tab-panel_selm3_1[data-tab-name=app]{display:block}._tabset_selm3_1 input[data-tab-name=app]:checked~._tab-labels_selm3_13 label[data-tab-name=app]{border-bottom:2px solid red}
+</style>
+<link rel="stylesheet" href="/_astro/_page_.BnpVUHip.css">
+<link rel="stylesheet" href="/_astro/_id_.CdoHgwyN.css"><script type="module" src="/_astro/hoisted.RD1pkjZP.js"></script></head> <body class="min-h-screen"> <header class="flex justify-between items-center px-4 py-3 border-b" style="border-color: #292e42;"> <a href="/" class="text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity" style="color: #c8d3f5;"> 2kindlebox </a> <div class="flex items-center gap-3">   <div id="auth"></div> </div> </header>  <main> <div class="content"> <div class="w-full flex gap-2 pb-2">  <a href="/tag/ai" class="rounded hover:bg-gray-200 dark:hover:bg-modal px-3 py-1 cursor-pointer">
+#ai </a><a href="/tag/termux" class="rounded hover:bg-gray-200 dark:hover:bg-modal px-3 py-1 cursor-pointer">
+#termux </a><a href="/tag/openclaw" class="rounded hover:bg-gray-200 dark:hover:bg-modal px-3 py-1 cursor-pointer">
+#openclaw </a> </div> <div class="ud-root read-only flex-1"><h1 level="1" id="openclaw-on-old-android-phone">openclaw on old android phone</h1><p>准备好以下条件：</p><ul><li><p>一部能正常使用的<strong>安卓旧手机</strong>（配置要求不高，普通旧手机就行）</p></li><li><p>手机能正常访问<strong>互联网</strong>（下载和安装需要）</p></li><li><p>⚠️ 网络环境可能需要<strong>魔法上网</strong>，如果下载失败请注意这一点</p></li><li><p>最重要的是要有<strong>信心和耐心</strong>，跟着一步步来，没问题！</p></li></ul><h2 level="2" id="下载和安装-Termux">下载和安装 Termux</h2><p>首先，我们需要下载 Termux 应用。</p><p><strong>什么是 Termux？</strong>简单说，它是一个能在安卓手机上运行命令行工具的软件，相当于给手机装了个简易的 Linux 系统。</p><h3 level="3" id="如何下载">如何下载</h3><p>由于国内应用市场无法直接下载，你需要通过以下方式之一获取：</p><p><strong>推荐方式：</strong> - <a target="_blank" rel="noopener noreferrer nofollow" href="https://f-droid.org/en/packages/com.termux/">F-Droid</a> - 官方下载渠道，最安全</p><p><strong>其他方式（如上面的打不开）：</strong> - <a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/termux/termux-app/releases">GitHub 官方发布页</a> - 需要魔法上网 - <a target="_blank" rel="noopener noreferrer nofollow" href="https://play.google.com/store/apps/details?id=com.termux">Google Play</a> - 第三方应用商店（如 ApkPure 等）- 注意选择正规来源</p><blockquote><p>💡 <strong>小贴士</strong>：下载时请认准官方来源，避免下载不安全的第三方应用。</p></blockquote><h3 level="3" id="安装">安装</h3><p>下载好后，直接安装。安装完成后：</p><ol><li><p><strong>打开 Termux 应用</strong></p></li><li><p>你会看到一个黑色屏幕，这就是命令行终端界面</p></li><li><p>长按屏幕可以粘贴内容，点击屏幕可以输入</p></li></ol><h2 level="2" id="-运行安装脚本">🦞 运行安装脚本</h2><p>接下来，复制下面的命令，粘贴到终端界面：</p><div class="llt-code readonly"><div class="language">bash</div><div class="wrapper"><pre><code>curl -sL https://s.zhihai.me/openclaw &gt; openclaw-install.sh
+<span class="hljs-built_in" class="hljs-built_in">chmod</span> +x openclaw-install.sh
+./openclaw-install.sh
+</code></pre></div></div><p>或者整行复制 <code>curl -sL https://s.zhihai.me/openclaw &gt; openclaw-install.sh &amp;&amp; chmod +x openclaw-install.sh &amp;&amp; ./openclaw-install.sh</code></p><p>注意记住你输入或随机生成的 token 。</p><h2 level="2" id="初始化">初始化</h2><h3 level="3" id="方法一">方法一</h3><p>如果顺利安装完成，接着：</p><p>1) 运行 <code>oclog</code> 命令，查看运行状态。 2) 新开一个终端窗口（屏幕左滑，点击 New Session），运行 <code>openclaw setup</code> 命令 。 3) 运行 <code>openclaw onboard</code> 启动服务。这个就和常见的初始化教程说得一样了。不多说，最后一步提示 gateway 启动失败，可以不管，Termux 不支持这个，但前面 <code>oclog</code> 能看到服务已经启动了。</p><h3 level="3" id="方法二">方法二</h3><p>如果上面这个看不懂，直接杀掉应用，重启 Termux 应用，再次进入终端界面。</p><p>运行 <code>ocr</code> 命令（OpenClaw Restart），接着运行 <code>oenclaw setup</code>。</p><p>![[7a766f2f9e5ce50840dad1267374e815.png]] 运行 ocr 命令后，过一段时间看到的效果（来自 2016年的 OnePlus 2 手机）</p><h2 level="2" id="可能的问题与局限">可能的问题与局限</h2><p>OpenClaw还在快速更新，不保证脚本针对新版本还能成功运行，届时可能需要相应调整。</p><p>相比标准的 OpenClaw 运行环境，使用 Termux 运行 OpenClaw 有一些局限：</p><ol><li><p><strong>性能限制</strong>：安卓设备的硬件资源可能不如 PC，影响 OpenClaw 的运行效率。</p></li><li><p><strong>稳定性</strong>：Termux 环境可能不如正式的 Linux 发行版稳定，偶尔会出现兼容性问题。</p></li><li><p><strong>功能缺失</strong>：某些高级功能可能需要额外配置或不被支持。</p></li></ol><p></p><h2 level="2" id="更多可能的玩法">更多可能的玩法</h2><ol><li><p><strong>定时任务</strong>：可以设置定时任务，让手机在特定时间自动执行某些任务。</p></li><li><p><strong>远程控制</strong>：通过网络远程控制手机（安装 <code>Termux-API</code> ），实现远程操作。</p></li><li><p><strong>智能家居集成</strong>：将手机作为智能家居中心的一部分，实现语音控制等。</p></li></ol><h2 level="2" id="总结">总结</h2><p>驱动 AI 写这个脚本花了我两个晚上的时间，第一次失败了，本来想放弃。后来不死心，第二天晚上又重来一遍。大部分时间都在解决 Android 兼容性问题。</p><p><strong>核心思路总结为这几句话：</strong> 1. 用 Termux 提供 Linux 环境 2. 修复 OpenClaw 的平台兼容性问题 3. 用 tmux 守护进程，确保服务持续运行 4. 用 termux-wake-lock 防止手机休眠</p><p>安装成功之后，记住几个命令就行： - <code>ocr</code> - 重启 OpenClaw 服务 - <code>oclog</code> - 查看 OpenClaw 服务状态 - <code>ockill</code> - 停止 OpenClaw 服务</p><p>如果你有旧手机，不妨让它 Great Again 。👏</p><script type="module">const injectHtml = (root, html) => {
+  const iframe = document.createElement("iframe");
+  const htmlContent = `<html><head></head><body>${html}</body></html>`;
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.onload = () => {
+    const doc = iframe.contentDocument || iframe.contentWindow?.document;
+    if (!doc) {
+      return;
+    }
+    doc.open();
+    doc.write(htmlContent);
+    doc.close();
+  };
+  root.replaceChildren(iframe);
+}
+  document.querySelectorAll('.playground')?.forEach(el=>{
+    const html = el.getAttribute('data-html');
+    if (html) {
+      injectHtml(el,html);
+    }
+    const indicator = document.createElement("div");
+    indicator.className = "indicator";
+    const showCode = document.createElement("div");
+    showCode.className = "show-code";
+    showCode.innerText = "code";
+    showCode.onclick = () => {
+      el.parentElement.classList.remove("preview-only");
+    };
+    const showPreview = document.createElement("div");
+    showPreview.className = "show-preview";
+    showPreview.innerText = "preview";
+    showPreview.onclick = () => {
+      el.parentElement.classList.add("preview-only");
+    };
+    indicator.appendChild(showCode);
+    indicator.appendChild(showPreview);
+    el.parentElement.appendChild(indicator);
+    if (window.screen.width < 768) {
+      showPreview.click();
+    }
+  });</script></div> <div data-page-id="openclaw-on-old-android-phone" class="navigator flex justify-between items-center mt-4 py-4"> <a href="/post/tt" class="flex items-center gap-1 text-blue cursor-pointer flex-[45%]"> <div class="i-ri:arrow-left-double-line w-5 h-5 flex-shrink-0"></div> <div class="text-start">deepseek 硬掰的连接</div> </a> <div></div> </div> </div> <div class="outline-wrapper"></div> </main>  <footer class="mt-8 flex justify-center"> <small class="w-full max-w-[720px] min-h-12 flex justify-center items-center opacity-80"> <a href="https://2kindlebox.github.io" target="_blank">©  2kindlebox  ·  since 2026  </a> </small> </footer> </body></html>
