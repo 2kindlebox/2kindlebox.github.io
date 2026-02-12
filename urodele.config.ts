@@ -1,18 +1,18 @@
 export const config = {
   github: {
-    login: "isharebox", // github login name, not user name
-    repo: "isharebox.github.io", //"urodele",
+    login: "2kindlebox", // github login name, not user name
+    repo: "2kindlebox.github.io", //"urodele",
     logInUrl: "",
     logInAuthUrl: "",
   },
   head: {
-    title: "isharebox",
-    brand: "isharebox",
+    title: "2kindlebox",
+    brand: "2kindlebox",
     description: "Less is more",
   },
   footer: {
-    copyright: "©  isharebox  ·  since 2026    ·",
-    copyrightUrl: "https://isharebox.github.io",
+    copyright: "©  2kindlebox  ·  since 2026    ·",
+    copyrightUrl: "https://2kindlebox.github.io",
   },
   pagination: {
     size: 10,
