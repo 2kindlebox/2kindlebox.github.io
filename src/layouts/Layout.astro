@@ -4,16 +4,13 @@ import Auth from "@/components/Auth/index.astro";
 import Footer from "@/components/Footer.astro";
 import BackToTop from "@/components/BackToTop.astro";
 import config from "urodele.config";
-
 interface Props {
   title?: string;
   description?: string;
   footer?: boolean;
 }
-
 const { title, description, footer = true } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="zh-CN" class="dark">
   <head>
@@ -23,7 +20,7 @@ const { title, description, footer = true } = Astro.props;
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content={config.head.brand} />
-    <meta name="msapplication-TileColor" content="#1e2030" />
+    <meta name="msapplication-TileColor" content="#2b2b2b" />
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
@@ -33,8 +30,8 @@ const { title, description, footer = true } = Astro.props;
     <title>{[config.head.brand, title].filter(Boolean).reverse().join(" | ")}</title>
   </head>
   <body class="min-h-screen">
-    <header class="flex justify-between items-center px-4 py-3 border-b" style="border-color: #292e42;">
-      <a href="/" class="text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity" style="color: #c8d3f5;">
+    <header class="flex justify-between items-center px-4 py-3 border-b" style="border-color: #4a4a4a;">
+      <a href="/" class="text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity" style="color: #ffffff;">
         {config.head.brand}
       </a>
       <div class="flex items-center gap-3">
@@ -47,33 +44,36 @@ const { title, description, footer = true } = Astro.props;
     
     {footer && <Footer />}
     
-    <!-- ★ 添加回到顶部按钮组件 -->
+    <!-- 回到顶部按钮组件 -->
     <BackToTop />
   </body>
 </html>
-
 <style is:global>
-  /* ★ 强制深蓝色背景 */
+  /* 全局 Ashik 深灰黑主题 */
   html, body {
-    background-color: #1e2030 !important;
-    color: #c8d3f5 !important;
+    background-color: #2b2b2b !important;
+    color: #d4d4d4 !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
   
-  /* 强制所有文字为深蓝主题色 */
-  h1, h2, h3, h4, h5, h6, p, span, div {
+  /* 标题统一为亮白 */
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+  }
+  
+  p, span, div {
     color: inherit;
   }
   
-  /* 链接颜色 - 全局正文链接 */
+  /* 链接 */
   a {
-    color: #93c5fd;  /* ★ 改：默认淡天蓝 */
+    color: #569cd6;
     text-decoration: none;
   }
   
   a:hover {
-    color: #7dd3fc;  /* ★ 改：悬停亮青 */
+    color: #ffd700;
     text-decoration: underline;
   }
   
@@ -93,32 +93,26 @@ const { title, description, footer = true } = Astro.props;
     padding: 0;
   }
   
-  /* 时间字体 - 深蓝色主题灰色 */
+  /* 时间 / 次要文本 */
   time, .post-date {
     font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
     font-size: 0.85rem;
-    color: #565f89;
+    color: #808080;
     white-space: nowrap;
   }
   
-  /* 文章标题链接 - 悬停淡紫 */
+  /* 文章标题链接 */
   .post-title {
-    color: #7aa2f7;  /* 保持原有默认色 */
+    color: #569cd6;
     transition: color 0.2s;
   }
   
   .post-title:hover {
-    color: #a78bfa;  /* ★ 改：悬停淡紫 */
+    color: #ffd700;
     text-decoration: underline;
   }
   
-  /* 顶部导航链接悬停 */
-  header > a:hover {
-    color: #a78bfa;  /* ★ 改：导航悬停淡紫 */
-    opacity: 1;
-  }
-
-  /* 紧凑列表 */
+  /* 列表 */
   .post-list {
     list-style: none;
     padding: 0;
@@ -134,15 +128,15 @@ const { title, description, footer = true } = Astro.props;
   }
   
   .post-item:hover {
-    background: rgba(74, 158, 255, 0.05);
+    background: rgba(86, 156, 214, 0.05);
   }
   
-  /* 边框颜色 - 深蓝色主题 */
+  /* 边框 */
   .border, .border-b, .border-t, hr {
-    border-color: #292e42 !important;
+    border-color: #4a4a4a !important;
   }
   
-  /* 滚动条 - 深蓝色主题 */
+  /* 滚动条 */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -150,17 +144,17 @@ const { title, description, footer = true } = Astro.props;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #3b4261;
+    background: #808080;
     border-radius: 3px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #565f89;
+    background: #a0a0a0;
   }
   
   /* 选中文字 */
   ::selection {
-    background: rgba(74, 158, 255, 0.3);
-    color: #c8d3f5;
+    background: rgba(86, 156, 214, 0.3);
+    color: #d4d4d4;
   }
 </style>
