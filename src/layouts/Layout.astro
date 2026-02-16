@@ -4,13 +4,16 @@ import Auth from "@/components/Auth/index.astro";
 import Footer from "@/components/Footer.astro";
 import BackToTop from "@/components/BackToTop.astro";
 import config from "urodele.config";
+
 interface Props {
   title?: string;
   description?: string;
   footer?: boolean;
 }
+
 const { title, description, footer = true } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="zh-CN" class="dark">
   <head>
@@ -20,7 +23,7 @@ const { title, description, footer = true } = Astro.props;
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content={config.head.brand} />
-    <meta name="msapplication-TileColor" content="#2b2b2b" />
+    <meta name="msapplication-TileColor" content="#202124" />
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
@@ -30,10 +33,131 @@ const { title, description, footer = true } = Astro.props;
     <title>{[config.head.brand, title].filter(Boolean).reverse().join(" | ")}</title>
   </head>
   <body class="min-h-screen">
-    <header class="flex justify-between items-center px-4 py-3 border-b" style="border-color: #4a4a4a;">
-      <a href="/" class="text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity" style="color: #ffffff;">
+    <header class="flex justify-between items-center px-4 py-3 border-b" style="border-color: #3A3C40;">
+      <a href="/" class="text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity" style="color: #FFFFFF;">
         {config.head.brand}
       </a>
+      <div class="flex items-center gap-3">
+        <slot name="operations" />
+        <Auth />
+      </div>
+    </header>
+    
+    <slot />
+    
+    {footer && <Footer />}
+    
+    <!-- ★ 添加回到顶部按钮组件 -->
+    <BackToTop />
+  </body>
+</html>
+
+<style is:global>
+  /* ★ 强制深色背景 */
+  html, body {
+    background-color: #202124 !important;  /* 主背景色 */
+    color: #FFFFFF !important;  /* 主文字色 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 强制所有文字为深色主题色 */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    color: inherit;
+  }
+  
+  /* 链接颜色 - 深色主题 */
+  a {
+    color: #75BFFF;  /* 链接色 */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #FFFFFF;  /* 悬停时变为主文字色 */
+    text-decoration: underline;
+  }
+  
+  main {
+    display: flex;
+    width: 100%;
+    padding: 0 16px;
+    gap: 12px;
+    justify-content: center;
+  }
+  
+  .content {
+    max-width: 720px;
+    width: 100%;
+    overflow-x: hidden;
+    flex: 1 1 0;
+    padding: 0;
+  }
+  
+  /* 时间字体 - 深色主题灰色 */
+  time, .post-date {
+    font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+    font-size: 0.85rem;
+    color: #A0A0A0;  /* 次要文字色 */
+    white-space: nowrap;
+  }
+  
+  /* 文章标题链接 - 深色主题亮蓝 */
+  .post-title {
+    color: #75BFFF;  /* 链接色 */
+    transition: color 0.2s;
+  }
+  
+  .post-title:hover {
+    color: #FFFFFF;  /* 悬停时变为主文字色 */
+    text-decoration: underline;
+  }
+  
+  /* 紧凑列表 */
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .post-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .post-item:hover {
+    background: rgba(117, 191, 255, 0.05);  /* 链接色半透明 */
+  }
+  
+  /* 边框颜色 - 深色主题 */
+  .border, .border-b, .border-t, hr {
+    border-color: #3A3C40 !important;  /* 边框色 */
+  }
+  
+  /* 滚动条 - 深色主题 */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #3A3C40;  /* 边框色 */
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5DADE2;  /* 布尔值/特殊关键字色 */
+  }
+  
+  /* 选中文字 */
+  ::selection {
+    background: rgba(117, 191, 255, 0.3);  /* 链接色半透明 */
+    color: #FFFFFF;  /* 主文字色 */
+  }
+</style>
       <div class="flex items-center gap-3">
         <slot name="operations" />
         <Auth />
