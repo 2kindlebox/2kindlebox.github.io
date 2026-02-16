@@ -3,7 +3,7 @@ import { presetTheme } from "unocss-preset-theme";
 const themes = {
   dark: {
     colors: {
-      // 主色 / 强调色
+      // 主色 / 强调色   
       primary: "#569cd6",      // 亮蓝，用于链接、主按钮等
       accent: "#ffd700",       // 亮黄，装饰 / 高亮
       // 背景
