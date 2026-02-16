@@ -3,17 +3,21 @@ import Layout from "../layouts/Layout.astro";
 import Pagination from "../components/Pagination.astro";
 import type { ShortPageData } from "../shared/type";
 import config from "urodele.config";
+
 interface Props {
   posts: ShortPageData[];
   page: number;
   pages: number;
 }
+
 const { posts, page, pages } = Astro.props;
 const tags = ['index', 'ai', 'vibecoding', 'travel', 'offgrid', 'book', 'music', 'movie', 'blogmarks', 'aiskills'];
+
 function formatDate(dateStr: string) {
   return new Date(dateStr).toISOString().split('T')[0];
 }
 ---
+
 <Layout title={config.head.title}>
   <header class="site-header">
     <h1 class="blog-title">Less is more</h1>
@@ -34,6 +38,169 @@ function formatDate(dateStr: string) {
               <time class="post-date">{formatDate(item.createTime)}</time>
               <a href={`/post/${item.id}`} class="post-title">{item.title}</a>
             </li>
+          ))
+        }
+      </ul>
+      
+      <a href="/stream" class="view-more">查看更多碎片思考，请前往 Stream →</a>
+      
+      <Pagination page={page} pages={pages} />
+      
+      <section class="tags-section">
+        <div class="tags">
+          {tags.map(tag => (
+            <a href={`/tag/${encodeURIComponent(tag)}`}>
+              {tag === 'index' ? '🔍' : `#${tag}`}
+            </a>
+          ))}
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .site-header { 
+    text-align: center; 
+    padding: 3rem 0 2rem; 
+    border-bottom: 1px dashed #3A3C40;  /* 边框色 */
+  }
+  .blog-title { 
+    font-size: 1.8rem; 
+    font-weight: 600; 
+    color: #FFFFFF;  /* 主文字色 */
+    margin-bottom: 0.8rem; 
+    letter-spacing: -0.5px;
+  }
+  
+  .blog-desc { 
+    color: #A0A0A0;  /* 次要文字色 */
+    font-size: 0.95rem; 
+    font-style: italic; 
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .blog-desc .text-cn,
+  .blog-desc .text-en {
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+  
+  .blog-desc .text-cn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .blog-desc:hover .text-en {
+    opacity: 0;
+  }
+  
+  .blog-desc:hover .text-cn {
+    opacity: 1;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 16px;
+  }
+  
+  .content {
+    width: 100%;
+    max-width: 720px;
+    padding: 0;
+  }
+  
+  .section-title { 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    color: #FFFFFF;  /* 主文字色 */
+    margin: 2rem 0 1rem; 
+    padding-bottom: 0.5rem; 
+    border-bottom: 1px dashed #3A3C40;  /* 边框色 */
+  }
+  
+  .post-list { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+  }
+  
+  .post-item { 
+    display: flex; 
+    align-items: baseline; 
+    gap: 1.5rem; 
+    padding: 0.35rem 0; 
+  }
+  
+  .post-item:hover { 
+    background: rgba(117, 191, 255, 0.05);  /* 链接色半透明 */
+  }
+  
+  .post-date { 
+    font-family: "SF Mono", Monaco, monospace; 
+    font-size: 0.8rem; 
+    color: #A0A0A0;  /* 次要文字色 */
+    min-width: 90px; 
+    flex-shrink: 0; 
+  }
+  
+  .post-title { 
+    color: #75BFFF;  /* 链接色 */
+    font-size: 0.95rem; 
+    text-decoration: none; 
+  }
+  
+  .post-title:hover { 
+    color: #FFFFFF;  /* 主文字色 */
+    text-decoration: underline; 
+  }
+  
+  .view-more { 
+    display: block; 
+    margin-top: 1.5rem; 
+    color: #A0A0A0;  /* 次要文字色 */
+    font-size: 0.85rem; 
+    font-style: italic; 
+  }
+  
+  .view-more:hover { 
+    color: #75BFFF;  /* 链接色 */
+  }
+  
+  .tags-section { 
+    margin-top: 3rem; 
+    padding-top: 2rem; 
+    border-top: 1px dashed #3A3C40;  /* 边框色 */
+    text-align: center; 
+  }
+  
+  .tags { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 1rem; 
+  }
+  
+  .tags a { 
+    color: #A0A0A0;  /* 次要文字色 */
+    font-size: 0.9rem; 
+    text-decoration: none; 
+  }
+  
+  .tags a:hover { 
+    color: #75BFFF;  /* 链接色 */
+  }
+</style>
           ))
         }
       </ul>
