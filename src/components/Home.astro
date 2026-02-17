@@ -3,21 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import Pagination from "../components/Pagination.astro";
 import type { ShortPageData } from "../shared/type";
 import config from "urodele.config";
-
 interface Props {
   posts: ShortPageData[];
   page: number;
   pages: number;
 }
-
 const { posts, page, pages } = Astro.props;
 const tags = ['index', 'ai', 'vibecoding', 'travel', 'offgrid', 'book', 'music', 'movie', 'blogmarks', 'aiskills'];
-
 function formatDate(dateStr: string) {
   return new Date(dateStr).toISOString().split('T')[0];
 }
 ---
-
 <Layout title={config.head.title}>
   <header class="site-header">
     <h1 class="blog-title">Less is more</h1>
@@ -58,23 +54,22 @@ function formatDate(dateStr: string) {
     </div>
   </main>
 </Layout>
-
 <style>
   .site-header { 
     text-align: center; 
     padding: 3rem 0 2rem; 
-    border-bottom: 1px dashed #292e42; 
+    border-bottom: 1px dashed #4a4a4a; 
   }
   .blog-title { 
     font-size: 1.8rem; 
     font-weight: 600; 
-    color: #bb9af7; 
+    color: #ffffff; 
     margin-bottom: 0.8rem; 
     letter-spacing: -0.5px;
   }
   
   .blog-desc { 
-    color: #a9b1d6; 
+    color: #d4d4d4; 
     font-size: 0.95rem; 
     font-style: italic; 
     max-width: 500px;
@@ -123,10 +118,10 @@ function formatDate(dateStr: string) {
   .section-title { 
     font-size: 1.1rem; 
     font-weight: 600; 
-    color: #c8d3f5; 
+    color: #ffffff; 
     margin: 2rem 0 1rem; 
     padding-bottom: 0.5rem; 
-    border-bottom: 1px dashed #292e42; 
+    border-bottom: 1px dashed #4a4a4a; 
   }
   
   .post-list { 
@@ -143,44 +138,44 @@ function formatDate(dateStr: string) {
   }
   
   .post-item:hover { 
-    background: rgba(74, 158, 255, 0.05); 
+    background: rgba(86, 156, 214, 0.05);  // 极淡蓝色 hover
   }
   
   .post-date { 
     font-family: "SF Mono", Monaco, monospace; 
     font-size: 0.8rem; 
-    color: #565f89; 
+    color: #808080; 
     min-width: 90px; 
     flex-shrink: 0; 
   }
   
   .post-title { 
-    color: #7aa2f7; 
+    color: #569cd6; 
     font-size: 0.95rem; 
     text-decoration: none; 
   }
   
   .post-title:hover { 
-    color: #c8d3f5; 
+    color: #ffd700; 
     text-decoration: underline; 
   }
   
   .view-more { 
     display: block; 
     margin-top: 1.5rem; 
-    color: #565f89; 
+    color: #808080; 
     font-size: 0.85rem; 
     font-style: italic; 
   }
   
   .view-more:hover { 
-    color: #7aa2f7; 
+    color: #569cd6; 
   }
   
   .tags-section { 
     margin-top: 3rem; 
     padding-top: 2rem; 
-    border-top: 1px dashed #292e42; 
+    border-top: 1px dashed #4a4a4a; 
     text-align: center; 
   }
   
@@ -192,61 +187,12 @@ function formatDate(dateStr: string) {
   }
   
   .tags a { 
-    color: #565f89; 
+    color: #808080; 
     font-size: 0.9rem; 
     text-decoration: none; 
   }
   
   .tags a:hover { 
-    color: #7aa2f7; 
+    color: #569cd6; 
   }
 </style>
-  
-  .post-title { 
-    color: #7aa2f7; 
-    font-size: 0.95rem; 
-    text-decoration: none; 
-  }
-  
-  .post-title:hover { 
-    color: #c8d3f5; 
-    text-decoration: underline; 
-  }
-  
-  .view-more { 
-    display: block; 
-    margin-top: 1.5rem; 
-    color: #565f89; 
-    font-size: 0.85rem; 
-    font-style: italic; 
-  }
-  
-  .view-more:hover { 
-    color: #7aa2f7; 
-  }
-  
-  .tags-section { 
-    margin-top: 3rem; 
-    padding-top: 2rem; 
-    border-top: 1px dashed #292e42; 
-    text-align: center; 
-  }
-  
-  .tags { 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 1rem; 
-  }
-  
-  .tags a { 
-    color: #565f89; 
-    font-size: 0.9rem; 
-    text-decoration: none; 
-  }
-  
-  .tags a:hover { 
-    color: #7aa2f7; 
-  }
-</style>
-
