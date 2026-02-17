@@ -1,167 +1,39 @@
 html {
   scroll-behavior: smooth;
 }
-
-/* 强制深蓝色 header */
+/* 强制深灰黑 header */
 header {
   position: sticky;
   top: 0;
   z-index: 20;
-  background-color: #1e2030;  // ★ 改：#0a2e2e → #1e2030
-  border-bottom: 1px solid #292e42;  // ★ 改：#1a4a4a → #292e42
+  background-color: #2b2b2b;  // 主背景
+  border-bottom: 1px solid #4a4a4a;
 }
-
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
   background-color: transparent;
 }
-
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(59, 66, 97, 0.5);  // ★ 改：rgba(92, 138, 138, 0.3) → 深蓝
+  background-color: rgba(74, 74, 74, 0.7);
   border-radius: 3px;
-  
   &:hover {
-    background-color: rgba(86, 95, 137, 0.7);  // ★ 改：rgba(92, 138, 138, 0.5) → 深蓝
+    background-color: rgba(128, 128, 128, 0.9);
   }
 }
-
 hr {
-  border-color: #292e42;  // ★ 改：#1a4a4a → #292e42
+  border-color: #4a4a4a;
   border-style: dashed;
   border-width: 1px 0 0 0;
   margin: 1.5rem 0;
 }
-
-// 按钮样式 - 深蓝色主题
+// 按钮样式 - Ashik 主题
 .buttoned {
   @apply px-3 py-1.5 rounded flex items-center justify-center gap-2 transition-all text-sm;
-  background-color: rgba(74, 158, 255, 0.1);  // ★ 改：rgba(107, 153, 153, 0.1) → 蓝色
-  color: #7aa2f7;  // ★ 改：#8cbaba → #7aa2f7
-  border: 1px solid #292e42;  // ★ 改：#1a4a4a → #292e42
-
-  &:disabled {
-    @apply opacity-50 cursor-not-allowed;
-  }
-
-  &:not(:disabled) {
-    &:active {
-      background-color: rgba(74, 158, 255, 0.2);  // ★ 改：绿色 → 蓝色
-    }
-
-    &:not(:active):hover {
-      background-color: rgba(74, 158, 255, 0.15);  // ★ 改：绿色 → 蓝色
-      border-color: #4a9eff;  // ★ 改：#5c8a8a → #4a9eff
-    }
-  }
-}
-
-.text-button {
-  @apply px-2 py-1 rounded flex items-center justify-center gap-2 transition-all text-sm;
-  color: #565f89;  // ★ 改：#8cbaba → #565f89
-  
-  &:hover {
-    background-color: rgba(74, 158, 255, 0.1);  // ★ 改：绿色 → 蓝色
-    color: #c8d3f5;  // ★ 改：#e0e0e0 → #c8d3f5
-  }
-  
-  &:active {
-    background-color: rgba(74, 158, 255, 0.2);  // ★ 改：绿色 → 蓝色
-  }
-}
-
-// loading
-div[data-modal-loading] {
-  position: relative;
-
-  &::before {
-    @apply absolute w-full h-full top-0 left-0 bg-bg bg-opacity-90;
-    content: '';
-    background-size: 24px;
-    background-image: icon('i-svg-spinners:ring-resize');
-    background-position: center;
-    background-repeat: no-repeat;
-    pointer-events: all;
-  }
-}
-
-div[data-modal-loading="false"] {
-  &::before {
-    content: none;
-  }
-}
-
-// transition
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.25s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-// page
-[data-page-draft]:not([data-page-draft="verified"]) {
-  display: none;
-  visibility: hidden;
-}
-
-[data-page-draft] {
-  .page-title {
-    position: relative;
-  }
-
-  .page-title::after {
-    content: 'draft';
-    @apply bg-yellow-200 dark:bg-yellow rounded mx-1 px-2 py-1 text-xs align-super;
-    display: none;
-  }
-}
-
-// Selection styling - 深蓝色主题
-::selection {
-  background-color: rgba(74, 158, 255, 0.3);  // ★ 改：绿色 → 蓝色
-  color: #c8d3f5;  // ★ 改：#e0e0e0 → #c8d3f5
-}
-
-      primary: "#75BFFF",
-      text: "#000",
-      icon: "rgba(116,115,115,1)",
-      bg: "#fff",
-      modal: "#fff",
-      gray: "#f5f5f5",
-      border: "#e5e5e5",
-      selection: "#e5e5e5",
-    },
-  },
-};
-
-export default defineConfig({
-  transformers: [transformerDirectives({ enforce: "pre" })],
-  presets: [
-    presetUno({
-      dark: "class",  // 保持 class 模式，确保 dark mode 生效
-    }),
-    presetTheme({
-      theme: {
-        dark: themes.dark,
-      },
-    }),
-    presetIcons({
-      autoInstall: true,
-    }),
-  ],
-  theme: themes.dark,  // 使用深色主题作为默认
-  content: {
-    filesystem: ["src/**/*.tsx", "src/**/*.astro"],  // 保持扫描路径不变
-  }
-});
+  background-color: #569cd6;   // 主按钮背景
   color: #ffffff;              // 按钮文字
   border: 1px solid #4a4a4a;
   &:disabled {
