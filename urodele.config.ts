@@ -7,7 +7,7 @@ export const config = {
   },
   head: {
     title: "2kindlebox",
-    brand: "2kindlebox",
+    brand: "2kindlebox ",
     description: "Less is more",
   },
   footer: {
