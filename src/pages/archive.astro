@@ -98,11 +98,11 @@ function formatDate(dateStr: string) {
       
       <div class="pagination">
         {currentPage > 1 && (
-          <a href={`?page=${currentPage - 1}`} class="pagination-btn prev-btn">Previous</a>
+          <a href={`/archive?page=${currentPage - 1}`} class="pagination-btn prev-btn">Previous</a>
         )}
         <span class="page-info">Page {currentPage} of {totalPages}</span>
         {currentPage < totalPages && (
-          <a href={`?page=${currentPage + 1}`} class="pagination-btn next-btn">Next</a>
+          <a href={`/archive?page=${currentPage + 1}`} class="pagination-btn next-btn">Next</a>
         )}
       </div>
     </div>
